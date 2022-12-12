@@ -40,7 +40,7 @@ class CustomView @JvmOverloads constructor(
         }
         paint.color = color
         paint.style = if (style == FILL) Paint.Style.FILL else Paint.Style.STROKE
-        paint.strokeWidth = 5F
+        paint.strokeWidth = 10F
     }
 
     override fun onDraw(canvas: Canvas) {

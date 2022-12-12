@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
     private companion object {
 
         private const val INTERVAL = 100L
-        private const val PERIOD = 1000L * 30 // 30 sec
-        private const val REPEAT = 10 // 10 times
+        private const val PERIOD = 1000L * 30
+        private const val REPEAT = 10
     }
     private lateinit var binding: ActivityMainBinding
     private var current = 0L
@@ -25,12 +25,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.customViewOne.setPeriod(PERIOD)
         binding.customViewTwo.setPeriod(PERIOD)
+        binding.customViewThree.setPeriod(PERIOD)
 
         lifecycleScope.launch {
             while (current < PERIOD * REPEAT) {
                 current += INTERVAL
                 binding.customViewOne.setCurrent(current)
                 binding.customViewTwo.setCurrent(current)
+                binding.customViewThree.setCurrent(current)
                 delay(INTERVAL)
             }
         }
